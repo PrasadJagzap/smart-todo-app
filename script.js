@@ -29,7 +29,8 @@ li.addEventListener("click", function () {
 const deleteBtn = document.createElement("button");
 deleteBtn.textContent = "X";
 
-deleteBtn.addEventListener("click", function () {
+deleteBtn.addEventListener("click", function (e) {
+    e.stopPropagation();
     li.remove();
     saveTasks();
 });
@@ -41,7 +42,33 @@ function saveTasks() {
 }
 
 function loadTasks() {
-    taskList.innerHTML = localStorage.getItem("tasks");
+    const savedTasks = localStorage.getItem("tasks");
+
+    if (savedTasks) {
+        taskList.innerHTML = savedTasks;
+
+        const allTasks = document.querySelectorAll("li");
+
+        allTasks.forEach(function (li) {
+
+            // Complete toggle
+            li.addEventListener("click", function () {
+                li.classList.toggle("completed");
+                saveTasks();
+            });
+
+            // Delete button
+            const deleteBtn = li.querySelector("button");
+
+            deleteBtn.addEventListener("click", function (e) {
+                e.stopPropagation();
+                li.remove();
+                saveTasks();
+            });
+
+        });
+    }
+
 }
 
 loadTasks();
