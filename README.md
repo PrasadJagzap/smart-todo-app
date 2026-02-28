@@ -24,7 +24,7 @@ script.js
 2. Open index.html in browser
 
 ## 🌐 Live Demo
-(Add link after deployment)
+()
 
 ## 👨‍💻 Author
-Your Name
+prasad jagzap
