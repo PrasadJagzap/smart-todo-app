@@ -18,10 +18,12 @@ function addTask() {
     taskList.appendChild(li);
 
     input.value = "";
+    saveTasks();
 }
 
 li.addEventListener("click", function () {
     li.classList.toggle("completed");
+    saveTasks();
 });
 
 const deleteBtn = document.createElement("button");
@@ -29,6 +31,17 @@ deleteBtn.textContent = "X";
 
 deleteBtn.addEventListener("click", function () {
     li.remove();
+    saveTasks();
 });
 
 li.appendChild(deleteBtn);
+
+function saveTasks() {
+    localStorage.setItem("tasks", taskList.innerHTML);
+}
+
+function loadTasks() {
+    taskList.innerHTML = localStorage.getItem("tasks");
+}
+
+loadTasks();
