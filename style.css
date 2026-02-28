@@ -29,6 +29,7 @@ button {
     border: none;
     cursor: pointer;
     border-radius: 5px;
+    margin-left: 5px;
 }
 
 button:hover {
@@ -44,11 +45,17 @@ li {
     background: #eee;
     margin: 5px 0;
     padding: 10px;
-    cursor: pointer;
     border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .completed {
     text-decoration: line-through;
     background-color: #c8e6c9;
+}
+
+.deleteBtn {
+    background-color: red;
 }
