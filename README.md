@@ -24,7 +24,7 @@ script.js
 2. Open index.html in browser
 
 ## repo link
- ()
+ (https://github.com/PrasadJagzap/smart-todo-app.git)
 
 ## 🌐 Live Demo
 ()
