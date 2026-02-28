@@ -47,3 +47,8 @@ li {
     cursor: pointer;
     border-radius: 5px;
 }
+
+.completed {
+    text-decoration: line-through;
+    background-color: #c8e6c9;
+}
